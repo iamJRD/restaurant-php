@@ -91,7 +91,7 @@
             $this->assertEquals([], $result);
         }
 
-        function test_getId()
+        function testGetId()
         {
             // Arrange
             $restaurant_name = "La Bonita";
@@ -108,7 +108,7 @@
             $this->assertEquals(true, is_numeric($result));
         }
 
-        function test_find()
+        function testFind()
         {
             // Arrange
             $restaurant_name = "La Bonita";

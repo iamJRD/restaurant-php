@@ -57,7 +57,27 @@
             $this->assertEquals([$test_cuisine, $test_cuisine2], $result);
         }
 
-        function test_getId()
+        function testDeleteAll()
+        {
+            //arrange
+            $cuisine_type = "Mexican";
+            $id = null;
+            $test_cuisine = new Cuisine($cuisine_type, $id);
+            $test_cuisine->save();
+
+            $cuisine_type2 = "Peruvian";
+            $test_cuisine2 = new Cuisine($cuisine_type2, $id);
+            $test_cuisine2->save();
+
+            //act
+            Cuisine::deleteAll();
+
+            //assert
+            $result = Cuisine::getAll();
+            $this->assertEquals([], $result);
+        }
+
+        function testGetId()
         {
             // Arrange
             $cuisine_type = "Mexican";
@@ -70,7 +90,6 @@
 
             // Assert
             $this->assertEquals(true, is_numeric($result));
-
         }
     }
  ?>
