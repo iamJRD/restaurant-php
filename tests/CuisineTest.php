@@ -154,5 +154,24 @@
             // Assert
             $this->assertEquals("Guatemalan", $test_cuisine->getCuisineType());
         }
+
+        function testDelete()
+        {
+            // Arrange
+            $cuisine_type = "Mexican";
+            $id = null;
+            $test_cuisine = new Cuisine($cuisine_type, $id);
+            $test_cuisine->save();
+
+            $cuisine_type2 = "Guatemalan";
+            $test_cuisine2 = new Cuisine($cuisine_type2, $id);
+            $test_cuisine2->save();
+
+            // Act
+            $test_cuisine->delete();
+
+            // Assert
+            $this->assertEquals([$test_cuisine2], Cuisine::getAll());
+        }
     }
  ?>
