@@ -176,5 +176,28 @@
             // Assert
             $this->assertEquals(["King Taco", "The best tacos in all of Portland"], [$test_restaurant->getRestaurantName(), $test_restaurant->getRestaurantDescription()]);
         }
+
+        function testDelete ()
+        {
+            //arrange
+            $restaurant_name = "La Bonita";
+            $id = null;
+            $cuisine_id = 1;
+            $description = "Burritos as big as your consciousness";
+            $test_restaurant = new Restaurant($restaurant_name, $description, $cuisine_id, $id);
+            $test_restaurant->save();
+
+            $restaurant_name2 = "La Bamba";
+            $cuisine_id2 = 1;
+            $description2 = "Good Pork!";
+            $test_restaurant2 = new Restaurant($restaurant_name2, $description2, $cuisine_id2, $id);
+            $test_restaurant2->save();
+
+            //act
+            $test_restaurant->delete();
+
+            //assert
+            $this->assertEquals([$test_restaurant2], Restaurant::getAll());
+        }
     }
 ?>

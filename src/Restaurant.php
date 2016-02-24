@@ -95,5 +95,10 @@
             $this->setRestaurantName($new_restaurant_name);
             $this->setRestaurantDescription($new_restaurant_description);
         }
+
+        function delete()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM restaurants WHERE id = {$this->getId()};");
+        }
     }
 ?>
