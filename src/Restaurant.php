@@ -89,5 +89,11 @@
             return $found_restaurant;
         }
 
+        function update($new_restaurant_name, $new_restaurant_description)
+        {
+            $GLOBALS['DB']->exec("UPDATE restaurant SET name = '{$new_restaurant_name}', description = '{$new_restaurant_description}' WHERE id = {$this->getId()};");
+            $this->setRestaurantName($new_restaurant_name);
+            $this->setRestaurantDescription($new_restaurant_description);
+        }
     }
 ?>

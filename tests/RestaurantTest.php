@@ -156,5 +156,25 @@
             // Assert
             $this->assertEquals($test_restaurant, $result);
         }
+
+        function testUpdate()
+        {
+            // Arrange
+            $restaurant_name = "La Bonita";
+            $id = null;
+            $cuisine_id = 1;
+            $description = "Burritos as big as your consciousness";
+            $test_restaurant = new Restaurant($restaurant_name, $description, $cuisine_id, $id);
+            $test_restaurant->save();
+
+            $new_restaurant_name = "King Taco";
+            $new_restaurant_description = "The best tacos in all of Portland";
+
+            // Act
+            $test_restaurant->update($new_restaurant_name, $new_restaurant_description);
+
+            // Assert
+            $this->assertEquals(["King Taco", "The best tacos in all of Portland"], [$test_restaurant->getRestaurantName(), $test_restaurant->getRestaurantDescription()]);
+        }
     }
 ?>
