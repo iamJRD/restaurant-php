@@ -8,7 +8,7 @@
     require_once "src/Cuisine.php";
     require_once "src/Restaurant.php";
 
-    $server = 'mysql:host=localhost;dbname=restaurants';
+    $server = 'mysql:host=localhost;dbname=restaurants_DB_test';
     $username = 'root';
     $password = 'root';
     $DB = new PDO($server, $username, $password);

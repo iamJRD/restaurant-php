@@ -5,7 +5,7 @@
 
     $app = new Silex\Application();
 
-    $server = 'mysql:host=localhost;dbname=restaurants';
+    $server = 'mysql:host=localhost;dbname=restaurants_DB';
     $username = 'root';
     $password = 'root';
     $DB = new PDO($server, $username, $password);
