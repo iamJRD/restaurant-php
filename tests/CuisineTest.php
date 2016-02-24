@@ -173,5 +173,26 @@
             // Assert
             $this->assertEquals([$test_cuisine2], Cuisine::getAll());
         }
+
+        function testDeleteCuisineRestaurants()
+        {
+            // Arrange
+            $cuisine_type = "Mexican";
+            $id = null;
+            $test_cuisine = new Cuisine($cuisine_type, $id);
+            $test_cuisine->save();
+
+            $restaurant_name = "La Bonita";
+            $cuisine_id = $test_cuisine->getId();
+            $description = "Burritos as big as your consciousness";
+            $test_restaurant = new Restaurant($restaurant_name, $description, $cuisine_id, $id);
+            $test_restaurant->save();
+
+            //act
+            $test_cuisine->delete();
+
+            //assert
+            $this->assertEquals([], Restaurant::getAll());
+        }
     }
  ?>
