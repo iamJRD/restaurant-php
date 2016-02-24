@@ -27,8 +27,7 @@
         {
             //arrange
             $cuisine_type = "Mexican";
-            $id = null;
-            $test_cuisine = new Cuisine($cuisine_type, $id);
+            $test_cuisine = new Cuisine($cuisine_type);
 
             //act
             $test_cuisine->save();
@@ -90,6 +89,25 @@
 
             // Assert
             $this->assertEquals(true, is_numeric($result));
+        }
+
+        function testFind()
+        {
+            // Arrange
+            $cuisine_type = "Mexican";
+            $id = null;
+            $test_cuisine = new Cuisine($cuisine_type, $id);
+            $test_cuisine->save();
+
+            $cuisine_type2 = "Peruvian";
+            $test_cuisine2 = new Cuisine($cuisine_type2, $id);
+            $test_cuisine2->save();
+
+            // Act
+            $result = Cuisine::find($test_cuisine->getId());
+
+            // Assert
+            $this->assertEquals($test_cuisine, $result);
         }
     }
  ?>

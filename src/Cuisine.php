@@ -4,7 +4,7 @@
         private $cuisine_type;
         private $id;
 
-        function __construct($cuisine_type, $id)
+        function __construct($cuisine_type, $id = NULL)
         {
             $this->cuisine_type = $cuisine_type;
             $this->id = $id;
@@ -48,6 +48,19 @@
         static function deleteAll()
         {
             $GLOBALS['DB']->exec("DELETE FROM cuisines;");
+        }
+
+        static function find($search_id)
+        {
+            $found_cuisine = null;
+            $cuisines = Cuisine::getAll();
+            foreach($cuisines as $cuisine){
+                $cuisine_id = $cuisine->getId();
+                if($cuisine_id == $search_id){
+                    $found_cuisine = $cuisine;
+                }
+            }
+            return $found_cuisine;
         }
 
     }
