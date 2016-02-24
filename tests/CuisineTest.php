@@ -15,7 +15,8 @@
 
 
 
-    class CuisineTest extends PHPUnit_Framework_TestCase{
+    class CuisineTest extends PHPUnit_Framework_TestCase
+    {
 
         protected function tearDown()
         {
@@ -108,6 +109,50 @@
 
             // Assert
             $this->assertEquals($test_cuisine, $result);
+        }
+
+        function testGetRestaurants()
+        {
+            //arrange
+            $cuisine_type = "Mexican";
+            $id = null;
+            $test_cuisine = new Cuisine($cuisine_type, $id);
+            $test_cuisine->save();
+
+            $test_cuisine_id = $test_cuisine->getId();
+
+            $restaurant_name = "La Bonita";
+            $description = "Burritos as big as your consciousness";
+            $test_restaurant = new Restaurant($restaurant_name, $description, $test_cuisine_id, $id);
+            $test_restaurant->save();
+
+            $restaurant_name2 = "La Bamba";
+            $description2 = "Good Pork!";
+            $test_restaurant2 = new Restaurant($restaurant_name2, $description2, $test_cuisine_id, $id);
+            $test_restaurant2->save();
+
+            //act
+            $result = $test_cuisine->getRestaurants();
+
+            //assert
+            $this->assertEquals([$test_restaurant, $test_restaurant2], $result);
+        }
+
+        function testUpdate()
+        {
+            // Arrange
+            $cuisine_type = "Mexican";
+            $id = null;
+            $test_cuisine = new Cuisine($cuisine_type, $id);
+            $test_cuisine->save();
+
+            $new_cuisine_type = "Guatemalan";
+
+            // Act
+            $test_cuisine->update($new_cuisine_type);
+
+            // Assert
+            $this->assertEquals("Guatemalan", $test_cuisine->getCuisineType());
         }
     }
  ?>

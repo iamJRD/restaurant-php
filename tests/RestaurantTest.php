@@ -21,15 +21,19 @@
         protected function tearDown()
         {
             Restaurant::deleteAll();
-            // Cuisine::deleteAll();
+            Cuisine::deleteAll();
         }
 
         function testSaveRestaurant()
         {
             //arrange
+            $cuisine_type = "Mexican";
+            $id = null;
+            $test_cuisine = new Cuisine($cuisine_type, $id);
+            $test_cuisine->save();
 
             $restaurant_name = "La Bonita";
-            $cuisine_id = 1;
+            $cuisine_id = $test_cuisine->getId();
             $description = "Burritos as big as your consciousness";
             $test_restaurant = new Restaurant($restaurant_name, $description, $cuisine_id);
 
@@ -45,16 +49,22 @@
         function testGetAll ()
         {
             //arrange
+
+            $cuisine_type = "Mexican";
+            $id = null;
+            $test_cuisine = new Cuisine($cuisine_type, $id);
+            $test_cuisine->save();
+
             $restaurant_name = "La Bonita";
             $id = null;
-            $cuisine_id = 1;
+            $cuisine_id = $test_cuisine->getId();
             $description = "Burritos as big as your consciousness";
             $test_restaurant = new Restaurant($restaurant_name, $description, $cuisine_id, $id);
             $test_restaurant->save();
 
             $restaurant_name2 = "La Bamba";
             $id2 = null;
-            $cuisine_id2 = 1;
+            $cuisine_id2 = $test_cuisine->getId();
             $description2 = "Good Pork!";
             $test_restaurant2 = new Restaurant($restaurant_name2, $description2, $cuisine_id2, $id2);
             $test_restaurant2->save();
@@ -69,16 +79,21 @@
         function testDeleteAll()
         {
             //arrange
+            $cuisine_type = "Mexican";
+            $id = null;
+            $test_cuisine = new Cuisine($cuisine_type, $id);
+            $test_cuisine->save();
+
             $restaurant_name = "La Bonita";
             $id = null;
-            $cuisine_id = 1;
+            $cuisine_id = $test_cuisine->getId();
             $description = "Burritos as big as your consciousness";
             $test_restaurant = new Restaurant($restaurant_name, $description, $cuisine_id, $id);
             $test_restaurant->save();
 
             $restaurant_name2 = "La Bamba";
             $id2 = null;
-            $cuisine_id2 = 1;
+            $cuisine_id2 = $test_cuisine->getId();
             $description2 = "Good Pork!";
             $test_restaurant2 = new Restaurant($restaurant_name2, $description2, $cuisine_id2, $id2);
             $test_restaurant2->save();
@@ -94,9 +109,14 @@
         function testGetId()
         {
             // Arrange
+            $cuisine_type = "Mexican";
+            $id = null;
+            $test_cuisine = new Cuisine($cuisine_type, $id);
+            $test_cuisine->save();
+
             $restaurant_name = "La Bonita";
             $id = null;
-            $cuisine_id = 1;
+            $cuisine_id = $test_cuisine->getId();
             $description = "Burritos as big as your consciousness";
             $test_restaurant = new Restaurant($restaurant_name, $description, $cuisine_id, $id);
             $test_restaurant->save();
@@ -111,16 +131,21 @@
         function testFind()
         {
             // Arrange
+            $cuisine_type = "Mexican";
+            $id = null;
+            $test_cuisine = new Cuisine($cuisine_type, $id);
+            $test_cuisine->save();
+
             $restaurant_name = "La Bonita";
             $id = null;
-            $cuisine_id = 1;
+            $cuisine_id = $test_cuisine->getId();
             $description = "Burritos as big as your consciousness";
             $test_restaurant = new Restaurant($restaurant_name, $description, $cuisine_id, $id);
             $test_restaurant->save();
 
             $restaurant_name2 = "La Bamba";
             $id2 = null;
-            $cuisine_id2 = 1;
+            $cuisine_id2 = $test_cuisine->getId();
             $description2 = "Good Pork!";
             $test_restaurant2 = new Restaurant($restaurant_name2, $description2, $cuisine_id2, $id2);
             $test_restaurant2->save();
