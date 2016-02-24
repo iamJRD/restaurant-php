@@ -21,6 +21,7 @@
         protected function tearDown()
         {
             Restaurant::deleteAll();
+            // Cuisine::deleteAll();
         }
 
         function testSaveRestaurant()
