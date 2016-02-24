@@ -13,7 +13,17 @@
     $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path'=>__DIR__."/../views"
     ));
 
+    $app->get("/", function() use ($app)
+    {
+        return $app['twig']->render('index.html.twig', array('cuisines'=> Cuisine::getAll()));
+    });
 
+    $app->post("/cuisines", function() use ($app)
+    {
+        $new_cuisine = new Cuisine($_POST['new_cuisine']);
+        $new_cuisine->save();
+      return $app['twig']->render('index.html.twig', array('cuisines'=>Cuisine::getAll()));
+    });
 
     return $app;
  ?>
