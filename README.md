@@ -21,6 +21,7 @@ _This web app will give the user the ability to add restaurants with certain cui
 
 * _DELETE is not enabled_
 * _PATCH does not properly change cuisine type in database so when going back to homepage after "updating", the cuisine type remains what is was before the "update"._
+* _Watch out for  cuisine vs cuisineS in app routing and twig rendering. There are inconsistencies_
 
 ## Support and contact details
 
