@@ -13,12 +13,14 @@ _This web app will give the user the ability to add restaurants with certain cui
 * _Clone the Repository_
 * _In your terminal, navigate to the project's main folder and run `composer install` to get Silex, Twig, and PHPUnit installed._
 * _Navigate to the project's web folder using terminal and enter `php -S localhost:8000`_
-* _{IMPORT DATABASE}_
+* _Open PHPMyAdmin by going to localhost:8080/phpmyadmin in your web browser_
+* _In phpmyadmin choose the Import tab and choose your database file and click Go. It's important to make sure you're not importing to a database that already exists, so make sure that a database with the same name as the one you're importing doesn't already exist._
 * _In your web browser enter localhost:8000 to view the web app._
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+* _DELETE is not enabled_
+* _PATCH does not properly change cuisine type in database so when going back to homepage after "updating", the cuisine type remains what is was before the "update"._
 
 ## Support and contact details
 

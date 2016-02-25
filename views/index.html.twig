@@ -27,6 +27,12 @@
                         <li><a href="cuisines/{{ cuisine.getID }}">{{cuisine.getCuisineType}}</a></li>
                     {% endfor %}
                 </ul>
+
+                <form action="/delete_cuisine" method="post">
+                    <input type="hidden" name="_method" value="delete">
+
+                    <button type="submit" class="btn btn-danger">Delete ALL CUISINES and RESTAURANTS</button>
+                </form>
             {% else %}
                 <p>Nothing to See. Add something!</p>
             {% endif %}
