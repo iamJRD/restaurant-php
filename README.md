@@ -1,45 +1,43 @@
-# _Restaurants by Cuisine_
+# Scrabble Word Score App
 
-#### _Sorts restaurants by cuisine type, February 2016_
+#### By: Jared Beckler | Epicodus | March 2016
 
-#### By _**Nic Netzel & Jared Beckler**_
+This project was used to get familiar with PHP/Silex/Twig/PHPUnit/PHPMyAdmin and will take a user inputted word and give them the Scrabble score of it.
 
-## Description
+## Prerequisites
 
-_This web app will give the user the ability to add restaurants with certain cuisines and update/delete certain properties._
+You will need the following things properly installed on your computer.
 
-## Setup/Installation Requirements
+* [MAMP](https://www.mamp.info/en/downloads/)
 
-* _Clone the Repository_
-* _In your terminal, navigate to the project's main folder and run `composer install` to get Silex, Twig, and PHPUnit installed._
-* _Navigate to the project's web folder using terminal and enter `php -S localhost:8000`_
-* _Open PHPMyAdmin by going to localhost:8080/phpmyadmin in your web browser_
-* _In phpmyadmin choose the Import tab and choose your database file and click Go. It's important to make sure you're not importing to a database that already exists, so make sure that a database with the same name as the one you're importing doesn't already exist._
-* _In your web browser enter localhost:8000 to view the web app._
+## Installation
+
+* `git clone https://github.com/jaredbeckler/scrabble-php` this repository
+* Change into the new directory
+* Run `composer install` in the project's home directory
+
+## Running / Development
+
+* Open PHPMyAdmin by going to localhost:8080/phpmyadmin in your web browser
+* In phpmyadmin choose the Import tab and choose your database file and click Go. It's important to make sure you're not importing to a database that already exists, so make sure that a database with the same name as the one you're importing doesn't already exist.
+* Start MAMP
+* In your web browser, go to `localhost:8889` to view the app
 
 ## Known Bugs
 
-* _DELETE is not enabled_
-* _PATCH does not properly change cuisine type in database so when going back to homepage after "updating", the cuisine type remains what is was before the "update"._
-* _Watch out for  cuisine vs cuisineS in app routing and twig rendering. There are inconsistencies_
+There are currently no known bugs.
 
 ## Support and contact details
 
-_Please contact us through GitHub with any questions, comments, or concerns._
+If you have any issues, questions, ideas, or concerns contact me through GitHub. If you would like to make a contribution to the code, feel free to do so and notify me by e-mail.
 
 ## Technologies Used
 
-* _Composer_
-* _Twig_
-* _Silex_
-* _PHPUnit_
-* _PHP_
-* _mySQL_
-* _Apache Server_
-* _Bootstrap_
+* HTML
+* CSS
+* PHP
+* mySQL
 
 ### License
 
-**This software is licensed under the MIT license.**
-
-Copyright (c) 2016 **_Nic Netzel & Jared Beckler_**
+Copyright &copy; 2016  |  Jared Beckler  |  Epicodus  |  Portland, OR
