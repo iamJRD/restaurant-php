@@ -1,8 +1,8 @@
-# Scrabble Word Score App
+# Restaurant/Cuisine App
 
 #### By: Jared Beckler | Epicodus | March 2016
 
-This project was used to get familiar with PHP/Silex/Twig/PHPUnit/PHPMyAdmin and will take a user inputted word and give them the Scrabble score of it.
+This project was used to get familiar with PHP/Silex/Twig/PHPUnit/PHPMyAdmin and will allow a user to input and save restaurants and cuisines.
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone https://github.com/jaredbeckler/scrabble-php` this repository
+* `git clone https://github.com/jaredbeckler/restaurant-php` this repository
 * Change into the new directory
 * Run `composer install` in the project's home directory
 
